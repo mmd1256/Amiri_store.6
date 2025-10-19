@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پرداخت و ثبت سفارش | فروشگاه کفش امیری</title>
+    <meta name="description" content="ثبت نهایی سفارش در فروشگاه کفش امیری — تضمین اصالت، ارسال سراسری، پرداخت آنلاین یا در محل">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <style>
+        .checkout-page {
+            padding: 40px 0;
+        }
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 992px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .checkout-form, .order-summary {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .form-section {
+            margin-bottom: 24px;
+        }
+        .form-section h3 {
+            margin-bottom: 16px;
+            color: #222;
+            font-size: 20px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #333;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #4721ff;
+            box-shadow: 0 0 0 2px rgba(71, 33, 255, 0.2);
+        }
+        .payment-methods {
+            display: flex;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .payment-option {
+            flex: 1;
+            padding: 16px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .payment-option.active {
+            border-color: #4721ff;
+            background: #f0eaff;
+        }
+        .payment-option i {
+            font-size: 24px;
+            color: #4721ff;
+            margin-bottom: 8px;
+        }
+        .order-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .order-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .order-item-info h4 {
+            margin: 0 0 4px 0;
+            font-size: 15px;
+        }
+        .order-item-info p {
+            margin: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 16px 0;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+        .btn-place-order {
+            width: 100%;
+            padding: 14px;
+            background: #4721ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-place-order:hover {
+            background: #3a1bd0;
+        }
+        .btn-place-order:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">
+                        <span class="logo-brand">امیری</span>
+                        <span class="logo-tagline">فروشگاه کفش تاناکورا</span>
+                    </span>
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="درباره ما.html">درباره ما</a></li>
+                        <li><a href="محصولات.html">محصولات</a></li>
+                        <li><a href="تماس.html">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="cart-widget">
+                        <button class="cart-btn" id="cart-toggle">
+                            <i class="ri-shopping-cart-2-line"></i>
+                            <span class="cart-counter" id="cart-counter">0</span>
+                        </button>
+                    </div>
+                    <button class="action-btn menu-toggle" aria-label="منو" id="menu-toggle">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <section class="checkout-page">
+            <div class="container">
+                <h1 style="text-align: center; margin-bottom: 30px;">ثبت سفارش</h1>
+                <div class="checkout-container">
+                    <!-- فرم اطلاعات -->
+                    <div class="checkout-form">
+                        <div class="success-message" id="success-message">
+                            سفارش شما با موفقیت ثبت شد! 🎉<br>
+                            کد سفارش: <span id="order-id"></span>
+                        </div>
+                        <form id="checkout-form">
+                            <!-- اطلاعات شخصی -->
+                            <div class="form-section">
+                                <h3>اطلاعات شخصی</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="fullname">نام و نام خانوادگی *</label>
+                                        <input type="text" id="fullname" class="form-control" required>
+                                        <div class="error-message" id="fullname-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">شماره موبایل *</label>
+                                        <input type="tel" id="phone" class="form-control" placeholder="09123456789" required>
+                                        <div class="error-message" id="phone-error"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">ایمیل (اختیاری)</label>
+                                    <input type="email" id="email" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- آدرس تحویل -->
+                            <div class="form-section">
+                                <h3>آدرس تحویل *</h3>
+                                <div class="form-group">
+                                    <label for="address">آدرس کامل</label>
+                                    <textarea id="address" class="form-control" rows="3" placeholder="استان، شهر، خیابان، پلاک، واحد..." required></textarea>
+                                    <div class="error-message" id="address-error"></div>
+                                </div>
+                            </div>
+
+                            <!-- روش ارسال -->
+                            <div class="form-section">
+                                <h3>روش ارسال</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-option active" data-method="post">
+                                        <i class="ri-truck-line"></i>
+                                        <div>پست پیشتاز</div>
+                                        <div>۲-۳ روز کاری</div>
+                                    </div>
+                                    <div class="payment-option" data-method="pickup">
+                                        <i class="ri-store-3-line"></i>
+                                        <div>تحویل حضوری</div>
+                                        <div>کرمانشاه</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- روش پرداخت -->
+                            <div class="form-section">
+                                <h3>روش پرداخت</h3>
+                                <div class="payment-methods">
+                                    <div class="payment-option active" data-method="cod">
+                                        <i class="ri-money-dollar-circle-line"></i>
+                                        <div>پرداخت در محل</div>
+                                        <div>نقدی یا کارتخوان</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-place-order" id="place-order-btn">
+                                ثبت نهایی سفارش
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- خلاصه سفارش -->
+                    <div class="order-summary">
+                        <h3>خلاصه سفارش</h3>
+                        <div id="order-items">
+                            <!-- محصولات اینجا لود می‌شوند -->
+                        </div>
+                        <div class="order-total">
+                            <span>جمع کل:</span>
+                            <span id="order-total">۰ تومان</span>
+                        </div>
+                        <div style="margin-top: 16px; padding: 12px; background: #f8f9ff; border-radius: 8px; font-size: 14px;">
+                            <i class="ri-shield-check-line" style="color: #4721ff;"></i>
+                            <strong>تضمین اصالت</strong> — تمامی محصولات با هولوگرام اختصاصی
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer" style="margin-top: 60px;">
+        <div class="container">
+            <div class="copyright">
+                <p>© ۱۴۰۴ فروشگاه کفش امیری - تمامی حقوق محفوظ است</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // === بارگذاری سبد خرید ===
+        function loadCart() {
+            return JSON.parse(localStorage.getItem('amiriCart') || '[]');
+        }
+
+        // === نمایش خلاصه سفارش ===
+        function renderOrderSummary() {
+            const cart = loadCart();
+            const itemsEl = document.getElementById('order-items');
+            const totalEl = document.getElementById('order-total');
+
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '<p>سبد خرید شما خالی است.</p>';
+                totalEl.textContent = '۰ تومان';
+                return;
+            }
+
+            itemsEl.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="order-item-info">
+                        <h4>${item.name}</h4>
+                        <p>${item.price.toLocaleString('fa-IR')} تومان × ${item.quantity}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            totalEl.textContent = total.toLocaleString('fa-IR') + ' تومان';
+        }
+
+        // === ارسال سفارش به تلگرام (نسخه اصلاح‌شده) ===
+        async function sendOrderToTelegram(orderData) {
+            // ⚠️ جایگزین کنید با توکن و شناسه واقعی خودتان
+            const TELEGRAM_BOT_TOKEN = '8062441586:AAGp8BIygDayXzpKAOwF9AMXq74WDZqTqOI';
+            const TELEGRAM_CHAT_ID = '8395846285';
+
+            const message = `
+🛍️ *سفارش جدید از فروشگاه امیری*
+
+👤 نام: ${orderData.fullname}
+📱 موبایل: ${orderData.phone}
+📧 ایمیل: ${orderData.email || '—'}
+🏠 آدرس: ${orderData.address}
+
+📦 روش ارسال: ${orderData.shipping}
+💳 روش پرداخت: ${orderData.payment}
+
+🧾 محصولات:
+${orderData.items.map(item => 
+    `- ${item.name} ×${item.quantity} = ${item.total.toLocaleString()} تومان`
+).join('\n')}
+
+💰 جمع کل: *${orderData.total.toLocaleString()} تومان*
+🆔 کد سفارش: ${orderData.orderId}
+            `;
+
+            // 🔥 اصلاح فاصله در URL
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+
+                // 🔍 بررسی دقیق پاسخ تلگرام
+                const result = await response.json();
+                if (result.ok) {
+                    return true;
+                } else {
+                    console.error('خطا از سوی تلگرام:', result);
+                    return false;
+                }
+            } catch (error) {
+                console.error('خطای ارسال به تلگرام:', error);
+                return false;
+            }
+        }
+
+        // === اعتبارسنجی فرم ===
+        function validateForm() {
+            let isValid = true;
+            const fullname = document.getElementById('fullname').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            // پاک کردن خطاهای قبلی
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+            if (!fullname) {
+                document.getElementById('fullname-error').textContent = 'لطفاً نام خود را وارد کنید.';
+                isValid = false;
+            }
+            if (!phone || !/^09\d{9}$/.test(phone)) {
+                document.getElementById('phone-error').textContent = 'شماره موبایل معتبر وارد کنید.';
+                isValid = false;
+            }
+            if (!address) {
+                document.getElementById('address-error').textContent = 'آدرس تحویل الزامی است.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // === ثبت سفارش ===
+        document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!validateForm()) return;
+
+            const cart = loadCart();
+            if (cart.length === 0) {
+                alert('سبد خرید شما خالی است!');
+                return;
+            }
+
+            const btn = document.getElementById('place-order-btn');
+            btn.disabled = true;
+            btn.textContent = 'در حال ثبت سفارش...';
+
+            // جمع‌آوری داده‌ها
+            const orderData = {
+                orderId: 'AMIRI-' + Date.now().toString().slice(-6),
+                fullname: document.getElementById('fullname').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                address: document.getElementById('address').value.trim(),
+                shipping: document.querySelector('.payment-option[data-method="post"].active') ? 'پست پیشتاز' : 'تحویل حضوری',
+                payment: 'پرداخت در محل',
+                items: cart.map(item => ({
+                    name: item.name,
+                    quantity: item.quantity,
+                    total: item.price * item.quantity
+                })),
+                total: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+            };
+
+            try {
+                const success = await sendOrderToTelegram(orderData);
+                if (success) {
+                    document.getElementById('order-id').textContent = orderData.orderId;
+                    document.getElementById('success-message').style.display = 'block';
+                    document.getElementById('checkout-form').style.display = 'none';
+
+                    // پاک کردن سبد خرید
+                    localStorage.removeItem('amiriCart');
+                    if (typeof window.updateCartUI === 'function') {
+                        window.updateCartUI();
+                    }
+                } else {
+                    throw new Error('پاسخ ناموفق از تلگرام');
+                }
+            } catch (error) {
+                console.error('خطای نهایی:', error);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'ثبت نهایی سفارش';
+            }
+        });
+
+        // === انتخاب روش ارسال/پرداخت ===
+        document.querySelectorAll('.payment-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const parent = option.closest('.payment-methods');
+                parent.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+            });
+        });
+
+        // === راه‌اندازی اولیه ===
+        document.addEventListener('DOMContentLoaded', () => {
+            renderOrderSummary();
+        });
+    </script>
+
+    <!-- Schema.org برای صفحه چک‌اوت -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CheckoutPage",
+      "name": "صفحه پرداخت فروشگاه کفش امیری",
+      "description": "ثبت نهایی سفارش و انتخاب روش ارسال و پرداخت",
+      "url": "https://amiristor.shop/checkout.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "صفحه اصلی",
+            "item": "https://amiristor.shop/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "سبد خرید",
+            "item": "https://amiristor.shop/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "پرداخت",
+            "item": "https://amiristor.shop/checkout.html"
+          }
+        ]
+      }
+    }
+    </script>
+</body>
+</html>

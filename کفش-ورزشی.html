@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کفش‌های ورزشی | فروشگاه کفش امیری</title>
+    <!-- فونت‌ها -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- آیکون‌ها -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- استایل‌ها -->
+    <link rel="stylesheet" href="header-styles.css">
+    <link rel="stylesheet" href="nav-actions-styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="کفش-ورزشی.css">
+</head>
+<body>
+    <!-- هدر -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- لوگو -->
+                <a href="index.html" class="logo">
+                    <span class="logo-text">
+                        <span class="logo-brand">امیری</span>
+                        <span class="logo-tagline">فروشگاه کفش تاناکورا</span>
+                    </span>
+                </a>
+                
+                <!-- منوی اصلی -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">خانه</a></li>
+                        <li class="active"><a href="محصولات.html">محصولات</a></li>
+                        <li><a href="smart-fit.html">فیت هوشمند</a></li>
+                        <li><a href="custom-shoes.html">سفارشی‌سازی</a></li>
+                        <li><a href="blog.html">مجله</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- اکشن‌های کاربر -->
+                <div class="header-actions">
+                    <button class="action-btn search-toggle" aria-label="جستجو" id="search-toggle">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="action-btn profile-toggle" aria-label="حساب کاربری" id="profile-toggle">
+                        <i class="ri-user-3-line"></i>
+                    </button>
+                    <button class="action-btn cart-toggle" aria-label="سبد خرید" id="cart-toggle">
+                        <i class="ri-shopping-bag-line"></i>
+                        <span class="badge">0</span>
+                    </button>
+                    <button class="action-btn menu-toggle" aria-label="منو" id="menu-toggle">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- جستجو -->
+    <div class="search-modal" id="search-modal">
+        <div class="container">
+            <div class="search-container">
+                <form class="search-form">
+                    <input type="text" placeholder="جستجوی محصولات..." class="search-input">
+                    <button type="submit" class="search-button">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+                <button class="search-close">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="search-suggestions">
+                <h3>برند‌های محبوب</h3>
+                <div class="brand-tags">
+                    <a href="#" class="brand-tag">نایک</a>
+                    <a href="#" class="brand-tag">آدیداس</a>
+                    <a href="#" class="brand-tag">ریبوک</a>
+                    <a href="#" class="brand-tag">پوما</a>
+                    <a href="#" class="brand-tag">نیو بالانس</a>
+                    <a href="#" class="brand-tag">آسیکس</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- بنر اصلی -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">کفش‌های <span class="text-gradient">ورزشی</span></h1>
+                <p class="hero-description">مجموعه‌ای از بهترین کفش‌های ورزشی اورجینال با کیفیت بالا</p>
+                <div class="hero-actions">
+                    <a href="#sport-shoes" class="btn btn-primary">مشاهده محصولات</a>
+                    <a href="#brands" class="btn btn-outline">برندهای برتر</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="ادیداس1.jpg" alt="کفش‌های ورزشی">
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- برندهای برتر -->
+    <section class="brands-section" id="brands">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">برندهای <span class="text-gradient">برتر</span></h2>
+                <p class="section-subtitle">معتبرترین برندهای کفش ورزشی جهان</p>
+            </div>
+            <div class="brands-slider">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="nike-logo.png" alt="نایک">
+                    </div>
+                    <div class="brand-content">
+                        <h3>نایک (Nike)</h3>
+                        <p>تنوع در طراحی، تکنولوژی پیشرفته</p>
+                        <a href="#nike" class="brand-link">مشاهده محصولات <i class="ri-arrow-left-line"></i></a>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="adidas-logo.png" alt="آدیداس">
+                    </div>
+                    <div class="brand-content">
+                        <h3>آدیداس (Adidas)</h3>
+                        <p>راحتی بی‌نظیر، طراحی خلاقانه</p>
+                        <a href="#adidas" class="brand-link">مشاهده محصولات <i class="ri-arrow-left-line"></i></a>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="puma-logo.png" alt="پوما">
+                    </div>
+                    <div class="brand-content">
+                        <h3>پوما (Puma)</h3>
+                        <p>سبک و مقاوم، مناسب سبک زندگی پویا</p>
+                        <a href="#puma" class="brand-link">مشاهده محصولات <i class="ri-arrow-left-line"></i></a>
+                    </div>
+                </div>
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="reebok-logo.png" alt="ریبوک">
+                    </div>
+                    <div class="brand-content">
+                        <h3>ریبوک (Reebok)</h3>
+                        <p>استایل کلاسیک، عملکرد روزانه</p>
+                        <a href="#reebok" class="brand-link">مشاهده محصولات <i class="ri-arrow-left-line"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="brand-nav">
+                <button class="nav-btn prev"><i class="ri-arrow-right-s-line"></i></button>
+                <button class="nav-btn next"><i class="ri-arrow-left-s-line"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- فیلترهای محصولات -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label class="filter-label">دسته‌بندی</label>
+                    <div class="filter-options">
+                        <button class="filter-btn active">همه</button>
+                        <button class="filter-btn">دویدن</button>
+                        <button class="filter-btn">بسکتبال</button>
+                        <button class="filter-btn">پیاده‌روی</button>
+                        <button class="filter-btn">فوتبال</button>
+                        <button class="filter-btn">تنیس</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">برند</label>
+                    <div class="filter-options">
+                        <button class="filter-btn active">همه</button>
+                        <button class="filter-btn">نایک</button>
+                        <button class="filter-btn">آدیداس</button>
+                        <button class="filter-btn">پوما</button>
+                        <button class="filter-btn">ریبوک</button>
+                        <button class="filter-btn">آسیکس</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">قیمت</label>
+                    <div class="price-slider">
+                        <div class="price-range">
+                            <div class="price-progress"></div>
+                            <div class="price-thumb min"></div>
+                            <div class="price-thumb max"></div>
+                        </div>
+                        <div class="price-values">
+                            <span class="min-price">600 هزار تومان</span>
+                            <span class="max-price">3.5 میلیون تومان</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-filter">اعمال فیلترها</button>
+                    <button class="btn btn-reset">حذف فیلترها</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- محصولات -->
+    <section class="products-section" id="sport-shoes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">کفش‌های <span class="text-gradient">ورزشی</span></h2>
+                <div class="products-view">
+                    <button class="btn-view active" data-view="grid"><i class="ri-grid-line"></i></button>
+                    <button class="btn-view" data-view="list"><i class="ri-list-check"></i></button>
+                    <select class="sort-select">
+                        <option value="popular">محبوب‌ترین</option>
+                        <option value="newest">جدیدترین</option>
+                        <option value="price-low">قیمت: کم به زیاد</option>
+                        <option value="price-high">قیمت: زیاد به کم</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <!-- محصول 1 -->
+                <div class="product-card">
+                    <div class="product-badge">پرفروش</div>
+                    <div class="product-image">
+                        <img src="nike-air-max.jpg" alt="نایک ایر مکس">
+                        <div class="product-actions">
+                            <button class="product-action-btn wishlist"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn quick-view"><i class="ri-eye-line"></i></button>
+                            <button class="product-action-btn add-to-cart"><i class="ri-shopping-bag-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">کفش دویدن</div>
+                        <h3 class="product-title">نایک ایر مکس 2025 - مشکی</h3>
+                        <div class="product-rate">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-line"></i>
+                            </div>
+                            <span class="rate-count">24 نظر</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">2,400,000 تومان</span>
+                            <span class="old-price">2,800,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 2 -->
+                <div class="product-card">
+                    <div class="product-badge new">جدید</div>
+                    <div class="product-image">
+                        <img src="adidas-ultraboost.jpg" alt="آدیداس اولترابوست">
+                        <div class="product-actions">
+                            <button class="product-action-btn wishlist"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn quick-view"><i class="ri-eye-line"></i></button>
+                            <button class="product-action-btn add-to-cart"><i class="ri-shopping-bag-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">کفش دویدن</div>
+                        <h3 class="product-title">آدیداس اولترابوست 2025 - طوسی</h3>
+                        <div class="product-rate">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <span class="rate-count">18 نظر</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">3,200,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="puma-rs-x.jpg" alt="پوما RS-X">
+                        <div class="product-actions">
+                            <button class="product-action-btn wishlist"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn quick-view"><i class="ri-eye-line"></i></button>
+                            <button class="product-action-btn add-to-cart"><i class="ri-shopping-bag-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">کفش روزمره</div>
+                        <h3 class="product-title">پوما RS-X - سفید و صورتی</h3>
+                        <div class="product-rate">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="rate-count">12 نظر</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">1,950,000 تومان</span>
+                            <span class="old-price">2,150,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصول 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="reebok-classic.jpg" alt="ریبوک کلاسیک">
+                        <div class="product-actions">
+                            <button class="product-action-btn wishlist"><i class="ri-heart-line"></i></button>
+                            <button class="product-action-btn quick-view"><i class="ri-eye-line"></i></button>
+                            <button class="product-action-btn add-to-cart"><i class="ri-shopping-bag-line"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">کفش روزمره</div>
+                        <h3 class="product-title">ریبوک کلاسیک لدر - سفید</h3>
+                        <div class="product-rate">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-line"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <span class="rate-count">34 نظر</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">1,850,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- محصولات بیشتر -->
+                <!-- 4 محصول دیگر -->
+            </div>
+            
+            <!-- پاگینیشن -->
+            <div class="pagination">
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-link">8</a>
+                <a href="#" class="page-nav next">
+                    <i class="ri-arrow-left-s-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- بخش ویژگی‌ها -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-truck-line"></i>
+                    </div>
+                    <h3 class="feature-title">ارسال سریع</h3>
+                    <p class="feature-text">ارسال سریع به سراسر کشور</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3 class="feature-title">ضمانت اصالت</h3>
+                    <p class="feature-text">تضمین اصالت تمامی محصولات</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-customer-service-2-line"></i>
+                    </div>
+                    <h3 class="feature-title">پشتیبانی 24/7</h3>
+                    <p class="feature-text">پاسخگویی در تمام ساعات</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ri-exchange-line"></i>
+                    </div>
+                    <h3 class="feature-title">بازگشت آسان</h3>
+                    <p class="feature-text">7 روز ضمانت بازگشت</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">
+                            <span class="logo-brand">امیری</span>
+                            <span class="logo-tagline">فروشگاه کفش تاناکورا</span>
+                        </span>
+                    </a>
+                    <p>بهترین مجموعه کفش‌های اورجینال با کیفیت</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-column">
+                        <h4>دسترسی سریع</h4>
+                        <ul>
+                            <li><a href="#">صفحه اصلی</a></li>
+                            <li><a href="#">محصولات</a></li>
+                            <li><a href="#">درباره ما</a></li>
+                            <li><a href="#">تماس با ما</a></li>
+                            <li><a href="#">بلاگ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4>خدمات مشتریان</h4>
+                        <ul>
+                            <li><a href="#">پیگیری سفارش</a></li>
+                            <li><a href="#">شرایط بازگشت</a></li>
+                            <li><a href="#">راهنمای سایز</a></li>
+                            <li><a href="#">سوالات متداول</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-column">
+                        <h4>تماس با ما</h4>
+                        <ul>
+                            <li><a href="#">تهران، خیابان ولیعصر، مرکز خرید</a></li>
+                            <li><a href="#">info@amiristor.shop</a></li>
+                            <li><a href="#">021-12345678</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© 1404 فروشگاه کفش امیری - تمامی حقوق محفوظ است.</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-telegram-line"></i></a>
+                    <a href="#"><i class="ri-whatsapp-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سبد خرید -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>سبد خرید</h3>
+            <button class="cart-close"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- آیتم‌های سبد خرید اینجا قرار می‌گیرند -->
+            <div class="empty-cart">
+                <i class="ri-shopping-bag-line"></i>
+                <p>سبد خرید شما خالی است</p>
+                <a href="#sport-shoes" class="btn btn-primary">مشاهده محصولات</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>مجموع:</span>
+                <span class="total-price">0 تومان</span>
+            </div>
+            <div class="cart-actions">
+                <a href="cart.html" class="btn btn-outline">مشاهده سبد خرید</a>
+                <a href="checkout.html" class="btn btn-primary">تکمیل خرید</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- اسکریپت‌ها -->
+    <script src="کفش-ورزشی.js"></script>
+</body>
+</html> 

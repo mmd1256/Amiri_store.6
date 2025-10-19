@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#7B68EE">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>درباره ما | فروشگاه کفش امیری | پیشرو در صنعت کفش‌های هوشمند 2025</title>
+    <meta name="description" content="کشف داستان فروشگاه کفش امیری - پیشرو در تکنولوژی کفش‌های هوشمند با واقعیت افزوده و هوش مصنوعی | تجربه خرید متاورسی | کفش‌های سازگار با محیط زیست">
+    
+    <!-- فونت‌های فارسی و آیکون‌های محلی -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* متغیرهای CSS */
+        :root {
+            --primary: #7B68EE;
+            --primary-dark: #6A5ACD;
+            --secondary: #FF6B6B;
+            --accent: #00D4AA;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --gradient-primary: linear-gradient(135deg, #7B68EE 0%, #6A5ACD 100%);
+            --gradient-secondary: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+            --gradient-accent: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        /* ریست استایل‌ها */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* هدر */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+
+        .logo-brand {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .logo-tagline {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* منوی اصلی - دسکتاپ */
+        .main-nav {
+            display: flex;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-list a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-list a:hover {
+            color: var(--primary);
+        }
+
+        .nav-list a.active {
+            color: var(--primary);
+        }
+
+        .nav-list a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .action-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* منوی موبایل */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-dark);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--bg-light);
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            z-index: 1001;
+            padding: 80px 20px 30px;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-nav-list a {
+            display: block;
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-list a:hover,
+        .mobile-nav-list a.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .mobile-nav-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* هیرو درباره ما */
+        .about-hero {
+            position: relative;
+            padding: 150px 0 80px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1556906781-2a0a95302b44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* بخش داستان ما */
+        .our-story {
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            right: 10%;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 5%;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 15%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-visual {
+            position: relative;
+        }
+
+        .main-image {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+        }
+
+        .story-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .story-img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: var(--gradient-primary);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            border-radius: var(--border-radius);
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            max-width: 180px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card-1 {
+            top: 20%;
+            left: -20px;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            bottom: 20%;
+            right: -20px;
+            animation-delay: 1.5s;
+        }
+
+        .floating-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .floating-card p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .story-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .tech-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tech-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .tech-feature h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .tech-feature p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* بخش ارزش‌های ما */
+        .our-values {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* بخش ارتباط با ما */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 25px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .method-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .method-content p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .method-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .method-link:hover {
+            color: var(--primary-dark);
+            gap: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 10px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        /* بخش CTA */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* فوتر */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-about-text {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after,
+        .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-right: 10px;
+        }
+
+        .contact-info-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-item i {
+            margin-top: 3px;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .copyright p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* رسپانسیو */
+        @media (max-width: 992px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-wrapper {
+                padding: 12px 0;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .about-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .about-hero h1 {
+                font-size: 36px;
+            }
+            
+            .about-hero p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .story-img,
+            .image-placeholder {
+                height: 300px;
+            }
+            
+            .floating-card {
+                position: relative;
+                margin: 15px 0;
+                max-width: 100%;
+            }
+            
+            .card-1,
+            .card-2 {
+                position: relative;
+                top: auto;
+                bottom: auto;
+                left: auto;
+                right: auto;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .method-icon {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .our-story,
+            .our-values,
+            .contact-section,
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .story-img,
+            .image-placeholder {
+                height: 250px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .cta-content h2 {
+                font-size: 28px;
+            }
+            
+            .cta-content p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero-badge {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .story-content h3 {
+                font-size: 20px;
+            }
+            
+            .value-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هدر مدرن -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- لوگو -->
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="ri-star-smile-fill"></i>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-brand">امیری</div>
+                        <div class="logo-tagline">فروشگاه کفش تاناکورا</div>
+                    </div>
+                </a>
+                
+                <!-- منوی اصلی -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="درباره ما.html" class="active">درباره ما</a></li>
+                        <li><a href="تماس.html">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- اکشن‌های کاربر -->
+                <div class="header-actions">
+                    <a href="index.html" class="action-btn">
+                        <i class="ri-shopping-bag-3-line"></i>
+                    </a>
+                    <a href="تماس.html" class="action-btn">
+                        <i class="ri-customer-service-2-line"></i>
+                    </a>
+                </div>
+                
+                <!-- دکمه منوی موبایل -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- منوی موبایل -->
+        <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+        <nav class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="درباره ما.html" class="active">درباره ما</a></li>
+                <li><a href="تماس.html">تماس با ما</a></li>
+            </ul>
+            
+            <div class="mobile-nav-actions">
+                <a href="index.html" class="action-btn">
+                    <i class="ri-shopping-bag-3-line"></i>
+                </a>
+                <a href="تماس.html" class="action-btn">
+                    <i class="ri-customer-service-2-line"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- هیرو مدرن -->
+    <section class="about-hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="hero-badge">
+                    <i class="ri-flashlight-fill"></i>
+                    <span>پیشرو در تکنولوژی کفش‌های 2025</span>
+                </div>
+                <h1>آینده کفش‌ها اینجاست</h1>
+                <p>ما در فروشگاه امیری، مرزهای نوآوری را جابجا می‌کنیم. با ترکیب تکنولوژی پیشرفته، طراحی پایدار و تجربه کاربری متحول‌کننده، آینده صنعت کفش را شکل می‌دهیم.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش داستان ما -->
+    <section class="our-story">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">داستان ما</span>
+                <h2 class="section-title">انقلابی در <span class="gradient-text">صنعت کفش</span></h2>
+                <p class="section-subtitle">از یک ایده ساده تا پیشروی در تکنولوژی کفش‌های هوشمند</p>
+            </div>
+            
+            <div class="story-grid">
+                <div class="story-visual">
+                    <div class="main-image">
+                        <!-- تگ تصویر اصلی -->
+                        <img src="baner.jpg" 
+                             alt="تکنولوژی پیشرفته کفش‌های امیری" 
+                             class="story-img"
+                             onerror="this.style.display='none'; document.querySelector('.image-placeholder').style.display='flex';">
+                        
+                        <!-- جایگزین در صورت خطا در لود تصویر -->
+                        <div class="image-placeholder" style="display: none;">
+                            <i class="ri-shoe-line" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <span>تکنولوژی پیشرفته کفش‌های امیری</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <i class="ri-palette-fill" style="color: var(--primary); font-size: 2rem; margin-bottom: 12px;"></i>
+                        <h4>طراحی متحول‌کننده</h4>
+                        <p>ترکیب هنر و تکنولوژی</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="ri-leaf-fill" style="color: var(--secondary); font-size: 2rem; margin-bottom: 12px;"></i>
+                        <h4>پایداری محیط زیست</h4>
+                        <p>مواد ۱۰۰% بازیافتی</p>
+                    </div>
+                </div>
+                
+                <div class="story-content">
+                    <h3>شروع سفر ما در دنیای تکنولوژی</h3>
+                    <p>در سال ۲۰۲۰، با یک ایده ساده شروع کردیم: چرا کفش‌ها نمی‌توانند هوشمند باشند؟ امروز، ما پیشرو در تکنولوژی کفش‌های متصل و سازگار هستیم.</p>
+                    
+                    <p>با استفاده از هوش مصنوعی و واقعیت افزوده، تجربه خرید و استفاده از کفش را متحول کرده‌ایم. هر جفت کفش امیری داستانی از نوآوری و تعهد به کیفیت است.</p>
+                    
+                    <p>ما به آینده‌ای پایدار اعتقاد داریم، جایی که تکنولوژی و محیط زیست در هماهنگی کامل قرار دارند. تمام محصولات ما با مواد بازیافتی و فرآیندهای پایدار تولید می‌شوند.</p>
+                    
+                    <div class="tech-features">
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="ri-cpu-line"></i>
+                            </div>
+                            <div>
+                                <h4>هوش مصنوعی</h4>
+                                <p>سازگاری خودکار با پا</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="ri-ar-line"></i>
+                            </div>
+                            <div>
+                                <h4>واقعیت افزوده</h4>
+                                <p>امتحان مجازی کفش</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="ri-leaf-line"></i>
+                            </div>
+                            <div>
+                                <h4>پایداری</h4>
+                                <p>مواد بازیافتی</p>
+                            </div>
+                        </div>
+                        <div class="tech-feature">
+                            <div class="tech-icon">
+                                <i class="ri-smartphone-line"></i>
+                            </div>
+                            <div>
+                                <h4>اتصال هوشمند</h4>
+                                <p>برنامه اختصاصی</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش ارزش‌های ما -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">ارزش‌های ما</span>
+                <h2 class="section-title">اصولی که <span class="gradient-text">ما را هدایت می‌کنند</span></h2>
+                <p class="section-subtitle">پایه‌های موفقیت و نوآوری ما در صنعت کفش</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="ri-lightbulb-flash-line"></i>
+                    </div>
+                    <h3>نوآوری مستمر</h3>
+                    <p>ما هرگز از جستجوی راه‌های جدید برای بهبود محصولات و خدمات خود دست نمی‌کشیم. تکنولوژی‌های پیشرفته مانند هوش مصنوعی و واقعیت افزوده در قلب کار ما قرار دارند.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="ri-user-heart-line"></i>
+                    </div>
+                    <h3>تجربه کاربری برتر</h3>
+                    <p>مشتریان ما در مرکز هر تصمیمی قرار دارند. از طراحی محصول تا خدمات پس از فروش، همه چیز حول محور رضایت و تجربه بی‌نظیر کاربران می‌چرخد.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="ri-earth-line"></i>
+                    </div>
+                    <h3>پایداری محیطی</h3>
+                    <p>تعهد ما به زمین و نسل‌های آینده در اولویت است. از مواد بازیافتی تا فرآیندهای تولید پایدار، هر قدم ما برای آینده‌ای سبزتر برداشته می‌شود.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش ارتباط با ما -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">در تماس باشید</h2>
+                <p class="section-subtitle">ما اینجا هستیم تا به سوالات شما پاسخ دهیم و بهترین خدمات را ارائه کنیم</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- بخش اطلاعات تماس -->
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="ri-phone-fill"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>تماس تلفنی</h3>
+                            <p>برای مشاوره و پشتیبانی تلفنی با ما در ارتباط باشید</p>
+                            <a href="tel:+9809900859556" class="method-link">
+                                <span>09900859556</span>
+                                <i class="ri-arrow-left-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="ri-mail-fill"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>ایمیل</h3>
+                            <p>برای پیام‌های رسمی و کسب اطلاعات بیشتر</p>
+                            <a href="mailto:wwwamirimohammad942@gmail.com" class="method-link">
+                                <span>wwwamirimohammad942@gmail.com</span>
+                                <i class="ri-arrow-left-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="ri-map-pin-2-fill"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>آدرس فروشگاه</h3>
+                            <p>کرمانشاه، میدان آزادی، پاساژ پرویز، طبقه دوم، فروشگاه کفش امیری</p>
+                            <div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3295.0571988369047!2d47.073791475528985!3d34.323562673055996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ffaed62c2a3f577%3A0x3b0200deebdefeac!2z2YXYrNiq2YXYuSDYqtis2KfYsduMINm-2LHZiNuM2LI!5e0!3m2!1sen!2s!4v1760868830112!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>آماده قدم گذاشتن در آینده هستید؟</h2>
+                <p>به جمع هزاران مشتری پیشرو ما بپیوندید و تجربه انقلابی کفش‌های هوشمند امیری را کشف کنید.</p>
+                
+                <div class="cta-buttons">
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="ri-shopping-bag-3-line"></i>
+                        کشف محصولات جدید
+                    </a>
+                    <a href="تماس.html" class="btn btn-outline">
+                        <i class="ri-chat-3-line"></i>
+                        گفتگو با متخصصان
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="ri-star-smile-fill"></i>
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-brand">امیری</div>
+                            <div class="logo-tagline">نوآوری در هر گام</div>
+                        </div>
+                    </div>
+                    <div class="footer-about">
+                        <h4 class="footer-about-title">درباره ما</h4>
+                        <p class="footer-about-text">فروشگاه امیری با بیش از ۱۰ سال سابقه در زمینه فروش کفش‌های اورجینال، به عنوان یکی از معتبرترین فروشگاه‌های کشور شناخته می‌شود. ما با ارائه محصولات با کیفیت و خدمات منحصر به فرد، تجربه خرید لذت‌بخشی را برای مشتریان فراهم می‌کنیم.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mohamad.amiri_19" aria-label="اینستاگرام">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://t.me/MMDW_2" aria-label="تلگرام">
+                            <i class="ri-telegram-line"></i>
+                        </a>
+                        <a href="https://wa.me/+9809900859556" aria-label="واتساپ">
+                            <i class="ri-whatsapp-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>لینک‌های سریع</h4>
+                    <ul>
+                        <li><a href="index.html">صفحه اصلی</a></li>
+                        <li><a href="درباره ما.html">درباره ما</a></li>
+                        <!-- <li><a href="محصولات.html">محصولات</a></li> -->
+                        <li><a href="تماس.html">تماس با ما</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 class="contact-title">تماس با ما</h4>
+                    <div class="contact-info-footer">
+                        <div class="contact-item">
+                            <i class="ri-map-pin-line"></i>
+                            <span>کرمانشاه، میدان آزادی، پاساژ پرویز، طبقه دوم</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ri-phone-line"></i>
+                            <span>09900859556</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ri-mail-line"></i>
+                            <span>wwwamirimohammad942@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ri-time-line"></i>
+                            <span>ساعات کاری: شنبه تا چهارشنبه از ۹ صبح تا ۹ شب</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>© ۱۴۰۴ فروشگاه کفش امیری - تمامی حقوق محفوظ است</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // اسکریپت‌های مدرن
+        document.addEventListener('DOMContentLoaded', function() {
+            // انیمیشن اسکرول هدر
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // مدیریت منوی موبایل
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                mobileNavOverlay.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+            
+            mobileNavOverlay.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            // مدیریت نمایش تصویر
+            const mainImage = document.querySelector('.main-image');
+            if (mainImage) {
+                const img = mainImage.querySelector('.story-img');
+                const placeholder = mainImage.querySelector('.image-placeholder');
+                
+                if (img && placeholder) {
+                    if (img.complete) {
+                        if (img.naturalHeight === 0) {
+                            placeholder.style.display = 'flex';
+                        }
+                    } else {
+                        img.addEventListener('load', function() {
+                            placeholder.style.display = 'none';
+                        });
+                        
+                        img.addEventListener('error', function() {
+                            placeholder.style.display = 'flex';
+                        });
+                    }
+                }
+            }
+
+            // انیمیشن عناصر هنگام اسکرول
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // اعمال انیمیشن به عناصر
+            const animatedElements = document.querySelectorAll('.value-card, .tech-feature, .contact-method');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+        // اسکریپت برای مدیریت نمایش تصویر
+document.addEventListener('DOMContentLoaded', function() {
+    const mainImage = document.querySelector('.main-image');
+    const img = mainImage.querySelector('.story-img');
+    const placeholder = mainImage.querySelector('.image-placeholder');
+    
+    // بررسی اینکه تصویر لود شده یا نه
+    if (img.complete) {
+        if (img.naturalHeight === 0) {
+            // تصویر لود نشده
+            placeholder.style.display = 'flex';
+        }
+    } else {
+        img.addEventListener('load', function() {
+            // تصویر با موفقیت لود شد
+            placeholder.style.display = 'none';
+        });
+        
+        img.addEventListener('error', function() {
+            // خطا در لود تصویر
+            placeholder.style.display = 'flex';
+        });
+    }
+});
+    </script>
+</body>
+</html>

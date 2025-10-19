@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جستجو در فروشگاه امیری</title>
+    <style>
+        /* استایل‌های پایه برای صفحه جستجو */
+        body {
+            font-family: 'Vazir', sans-serif; /* یا فونت استفاده شده در سایت شما */
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .search-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* پس‌زمینه تاریک */
+            z-index: 10000; /* بسیار بالا */
+            display: none; /* اول پنهان */
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 50px;
+        }
+        .search-container.active {
+            display: flex;
+        }
+        .search-header {
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #4721ff;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #4721ff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .results-container {
+            width: 90%;
+            max-width: 800px;
+            height: calc(100% - 150px); /* حساب کردن فضای اینپوت و هدر */
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+        }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .product-name {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .product-brand {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .no-results {
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container" id="searchContainer">
+        <button class="close-btn" id="closeSearch">&times;</button>
+        <div class="search-header">
+            <input type="text" class="search-input" id="searchInput" placeholder="جستجوی نام کفش یا برند...">
+        </div>
+        <div class="results-container" id="resultsContainer">
+            <!-- نتایج جستجو اینجا نمایش داده می‌شوند -->
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
